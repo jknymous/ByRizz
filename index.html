@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title>ByRizz - Photographer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        /* Override tailwind to force lowercase font */
+        body {
+            font-family: 'Inter', sans-serif;
+            text-transform: lowercase;
+            background-color: #ffffff;
+            color: #374151;
+            /* gray-700 */
+            min-width: 300px;
+        }
+
+        /* material icons style fix */
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+
+        /* Scrollbar hidden for small clean UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(100, 116, 139, 0.4);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* mobile menu detach animations */
+        [data-menu] {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 bg-white z-50 shadow-sm border-b border-gray-200">
+        <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-3">
+            <!-- Logo Left -->
+            <a href="#dashboard" class="flex items-center space-x-2 select-none">
+                <!-- Logo text as brand -->
+                <span class="font-extrabold text-2xl tracking-wide text-gray-900 leading-none">byrizz</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav id="nav-desktop" class="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
+                <a href="#dashboard" data-nav-link
+                    class="relative py-2 px-1 hover:text-gray-900 transition duration-200 ease-in-out">dashboard</a>
+                <a href="#gallery" data-nav-link
+                    class="relative py-2 px-1 hover:text-gray-900 transition duration-200 ease-in-out">galery</a>
+                <a href="#login" data-nav-link
+                    class="relative py-2 px-1 hover:text-gray-900 transition duration-200 ease-in-out">login</a>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button id="mobile-menu-button" aria-label="toggle menu"
+                class="md:hidden flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-gray-300">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <nav id="nav-mobile" aria-label="mobile menu" data-menu="closed"
+            class="fixed inset-0 bg-white bg-opacity-95 backdrop-blur-sm z-40 transform -translate-x-full md:hidden transition-transform duration-300 ease-in-out">
+            <div class="px-4 pt-6">
+                <button id="mobile-menu-close" aria-label="close menu"
+                    class="mb-6 flex items-center justify-start text-gray-700 hover:text-gray-900 transition focus:outline-none">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+
+                <ul class="flex flex-col space-y-6 text-lg font-semibold text-gray-900">
+                    <li><a href="#dashboard" data-nav-link-mobile
+                            class="block py-2 px-1 hover:text-gray-700 focus:outline-none focus:text-gray-600">dashboard</a>
+                    </li>
+                    <li><a href="#gallery" data-nav-link-mobile
+                            class="block py-2 px-1 hover:text-gray-700 focus:outline-none focus:text-gray-600">galery</a>
+                    </li>
+                    <li><a href="#login" data-nav-link-mobile
+                            class="block py-2 px-1 hover:text-gray-700 focus:outline-none focus:text-gray-600">login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow max-w-screen-xl mx-auto w-full px-4 pt-10 pb-16">
+
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="space-y-12">
+            <!-- Welcome Banner -->
+            <div class="bg-indigo-600 text-white p-6 rounded-lg shadow-md">
+                <h1 class="text-2xl font-bold">Selamat datang di ByRizz</h1>
+                <p class="mt-2">Temukan keindahan melalui lensa kami. Kami siap menangkap momen berharga Anda.</p>
+            </div>
+
+            <!-- Services Offered -->
+            <section aria-labelledby="services-title">
+                <h2 id="services-title" class="text-gray-800 text-xl font-semibold mb-6">what i offer</h2>
+
+                <!-- Offer 1 -->
+                <article
+                    class="rounded-lg shadow-sm bg-white p-6 flex flex-col space-y-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-indigo-600 text-4xl">camera_alt</span>
+                    <h3 class="text-gray-900 font-semibold text-base">professional photoshoots</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">high-quality portrait, event, and product
+                        photography tailored to your needs.</p>
+                </article>
+
+                <!-- Offer 2 -->
+                <article
+                    class="rounded-lg shadow-sm bg-white p-6 flex flex-col space-y-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-indigo-600 text-4xl">photo_library</span>
+                    <h3 class="text-gray-900 font-semibold text-base">creative editing</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">artistic retouching and enhancement to bring out
+                        the best in your images.</p>
+                </article>
+
+                <!-- Offer 3 -->
+                <article
+                    class="rounded-lg shadow-sm bg-white p-6 flex flex-col space-y-4 hover:shadow-lg transition-shadow duration-300">
+                    <span class="material-symbols-outlined text-indigo-600 text-4xl">videocam</span>
+                    <h3 class="text-gray-900 font-semibold text-base">event coverage</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">capturing memorable moments with versatile photo
+                        and video packages.</p>
+                </article>
+            </section>
+
+            <!-- Albums Sample from Gallery -->
+            <section aria-labelledby="albums-title">
+                <h2 id="albums-title" class="text-gray-800 text-xl font-semibold mb-6">some albums</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                    <!-- Album 1 -->
+                    <article
+                        class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                        <div class="grid grid-cols-3 gap-0">
+                            <img src="https://placehold.co/300x200?text=Album+1+Cover"
+                                alt="album 1 cover, nature photography with trees and mountains"
+                                class="w-full h-24 object-cover col-span-2 rounded-l-lg" />
+                            <img src="https://placehold.co/150x150?text=Photo+1"
+                                alt="photo 1 in album 1, green forest landscape"
+                                class="w-full h-24 object-cover rounded-r-lg" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-gray-900 font-semibold text-sm mb-1">Nature Wonders</h3>
+                            <p class="text-gray-600 text-xs">a selection of breathtaking landscapes and wildlife.</p>
+                        </div>
+                    </article>
+
+                    <!-- Album 2 -->
+                    <article
+                        class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                        <div class="grid grid-cols-3 gap-0">
+                            <img src="https://placehold.co/300x200?text=Album+2+Cover"
+                                alt="album 2 cover, urban cityscape photography at dusk"
+                                class="w-full h-24 object-cover col-span-2 rounded-l-lg" />
+                            <img src="https://placehold.co/150x150?text=Photo+2"
+                                alt="photo 1 in album 2, city skyline with lights"
+                                class="w-full h-24 object-cover rounded-r-lg" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-gray-900 font-semibold text-sm mb-1">City Vibes</h3>
+                            <p class="text-gray-600 text-xs">capturing the energy of urban life through the lens.</p>
+                        </div>
+                    </article>
+
+                    <!-- Album 3 -->
+                    <article
+                        class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+                        <div class="grid grid-cols-3 gap-0">
+                            <img src="https://placehold.co/300x200?text=Album+3+Cover"
+                                alt="album 3 cover, black and white portrait of a model"
+                                class="w-full h-24 object-cover col-span-2 rounded-l-lg" />
+                            <img src="https://placehold.co/150x150?text=Photo+3"
+                                alt="photo 1 in album 3, close-up artistic black and white portrait"
+                                class="w-full h-24 object-cover rounded-r-lg" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-gray-900 font-semibold text-sm mb-1">Portraits</h3>
+                            <p class="text-gray-600 text-xs">expressive and timeless portraits in monochrome and color.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div class="mt-4">
+                    <a href="#gallery"
+                        class="inline-block bg-indigo-600 text-white text-sm font-semibold py-2 px-4 rounded-md hover:bg-indigo-700 transition">Lihat
+                        lebih banyak di galery</a>
+                </div>
+            </section>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="hidden space-y-8">
+            <h1 class="text-gray-900 text-3xl font-extrabold mb-4">galery</h1>
+            <p class="text-gray-700 text-sm max-w-xl leading-relaxed">
+                upload your photos here and preview your portfolio collection instantly.
+            </p>
+
+            <form id="upload-form" class="flex flex-col space-y-4 max-w-md" aria-label="photo upload form">
+                <label for="photo-upload" class="block text-sm font-semibold text-gray-800">select photos to
+                    upload</label>
+                <input type="file" id="photo-upload" accept="image/*" multiple
+                    class="block w-full text-gray-700 cursor-pointer" />
+            </form>
+
+            <div id="gallery-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+        </section>
+
+        <!-- LOGIN SECTION -->
+        <section id="login" class="hidden max-w-md mx-auto space-y-6">
+            <h1 class="text-gray-900 text-3xl font-extrabold mb-4">login</h1>
+            <form aria-label="login form" class="space-y-4" onsubmit="return false;">
+                <label for="email"
+                    class="block text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1">email</label>
+                <input type="email" id="email" placeholder="your email" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                <label for="password"
+                    class="block text-xs font-semibold text-gray-700 uppercase tracking-wide mb-1">password</label>
+                <input type="password" id="password" placeholder="your password" required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                    sign in
+                </button>
+            </form>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="mt-12 text-center">
+            <h2 class="text-gray-800 text-xl font-semibold mb-4">Contact & Social Media</h2>
+            <p class="text-gray-600 text-sm">Follow me on social media or contact me directly:</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://instagram.com" target="_blank" class="text-indigo-600 hover:underline">Instagram</a>
+                <a href="https://facebook.com" target="_blank" class="text-indigo-600 hover:underline">Facebook</a>
+                <a href="mailto:contact@byrizz.com" class="text-indigo-600 hover:underline">Email</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="bg-gray-50 border-t border-gray-200 text-center py-6 text-xs text-gray-600 tracking-wider lowercase select-none">
+        © 2024 byrizz photography. all rights reserved.
+    </footer>
+
+    <script>
+        // Navigation logic
+        const navLinks = document.querySelectorAll('[data-nav-link]');
+        const navLinksMobile = document.querySelectorAll('[data-nav-link-mobile]');
+        const sections = {
+            dashboard: document.getElementById('dashboard'),
+            gallery: document.getElementById('gallery'),
+            login: document.getElementById('login'),
+        };
+        const mobileMenu = document.getElementById('nav-mobile');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function hideAllSections() {
+            Object.values(sections).forEach((sec) => {
+                sec.classList.add('hidden');
+            });
+        }
+
+        function setActiveNav(targetId) {
+            // Desktop nav
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('text-gray-900', 'font-extrabold');
+                } else {
+                    link.classList.remove('text-gray-900', 'font-extrabold');
+                }
+            });
+            // Mobile nav
+            navLinksMobile.forEach(link => {
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('text-gray-900', 'font-extrabold');
+                } else {
+                    link.classList.remove('text-gray-900', 'font-extrabold');
+                }
+            });
+        }
+
+        function openSection(sectionId) {
+            hideAllSections();
+            sections[sectionId].classList.remove('hidden');
+            setActiveNav(sectionId);
+            if (window.innerWidth < 768) {
+                closeMobileMenu();
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href').substring(1);
+                openSection(target);
+                history.pushState(null, '', `#${target}`);
+            });
+        });
+
+        navLinksMobile.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href').substring(1);
+                openSection(target);
+                history.pushState(null, '', `#${target}`);
+            });
+        });
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(0)';
+        });
+        mobileMenuClose.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.style.transform = 'translateX(-100%)';
+        }
+
+        // On page load open the section from hash or dashboard by default
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && Object.keys(sections).includes(hash)) {
+                openSection(hash);
+            } else {
+                openSection('dashboard');
+            }
+        });
+
+        // UPLOAD AND DISPLAY PHOTOS IN GALLERY
+        const photoUpload = document.getElementById('photo-upload');
+        const galleryGrid = document.getElementById('gallery-grid');
+
+        const uploadedPhotos = [];
+
+        function createPhotoElement(src, altText) {
+            const div = document.createElement('div');
+            div.className = 'relative rounded-lg overflow-hidden shadow-sm bg-white hover:shadow-md transition-shadow duration-300 cursor-pointer aspect-[4/3]';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = altText;
+            img.className = 'object-cover w-full h-full';
+            img.loading = 'lazy';
+
+            div.appendChild(img);
+            return div;
+        }
+
+        photoUpload.addEventListener('change', (event) => {
+            const files = event.target.files;
+            if (!files) return;
+
+            Array.from(files).forEach(file => {
+                if (!file.type.startsWith('image/')) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const src = e.target.result;
+                    uploadedPhotos.push(src);
+
+                    const photoElement = createPhotoElement(src, 'uploaded photo preview');
+                    galleryGrid.appendChild(photoElement);
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // reset input to allow uploading same files again if needed
+            photoUpload.value = '';
+        });
+    </script>
